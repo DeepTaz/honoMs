@@ -1,0 +1,32 @@
+{
+  "scripts": {
+    "dev:auth": "nodemon auth/index.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.9.0",
+    "hono": "^4.2.1",
+    "mongoose": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1"
+  },
+  "name": "honoms",
+  "description": "``` npm install npm run dev ```",
+  "version": "1.0.0",
+  "main": "index",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepTaz/honoMs.git"
+  },
+  "keywords": [
+    "taz"
+  ],
+  "author": "Taz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeepTaz/honoMs/issues"
+  },
+  "homepage": "https://github.com/DeepTaz/honoMs#readme"
+}
