@@ -1,0 +1,54 @@
+@port=3000
+@dev_host=http://localhost:{{port}}
+
+GET {{dev_host}}/users/1
+Accept: application/json
+
+###
+PUT {{dev_host}}/profile
+Content-Type: application/json
+
+{
+  "pseudo": "klm-8888888888",
+  "cool": true,
+  "sexe": "lsllsls",
+  "opt": "oklm"
+}
+
+###
+
+GET {{dev_host}}/profile
+Accept: application/json
+
+###
+
+DELETE {{dev_host}}/profile
+Accept: application/json
+
+###
+
+
+GET {{dev_host}}/logout
+Accept: application/json
+
+###
+POST {{dev_host}}/
+Content-Type: application/json
+
+{
+  "phoneNumber": "+22870124855",
+  "name": "Tank",
+  "password": ".123.3"
+}
+
+###
+## Creation de compte.
+POST {{dev_host}}/signup
+Content-Type: application/json
+
+{
+  "phoneNumber": "+22870124855",
+  "name": " Tank   ",
+  "password": ".123.3",
+  "confirmPassword": ".123.3"
+}
