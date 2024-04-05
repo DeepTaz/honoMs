@@ -1,11 +1,11 @@
 import {serve} from "@hono/node-server";
 import {mongoose} from "../db/index.js";
-import {api} from "./src/index.js";
+import authApi from "./src/index.js";
 import {AUTH} from "./src/common/constant.js";
 
 mongoose.connect(AUTH.URI).then(_ => {
     serve({
-        fetch: api.fetch,
+        fetch: authApi.fetch,
         port: AUTH.PORT,
     }, (addressInfo) => console.log(`server successfully start ${AUTH.HOST} and run on port=${addressInfo.port}`))
 }).catch(_ => {
