@@ -9,7 +9,7 @@ import {SERVER_STATUS_CODE} from "./constant.js";
 export default function createApi() {
     const api = new Hono()
     // les middlewares que j'utilise souvent.
-    api.use("*", compress(), cors(), logger())
+    api.use(compress(), cors(), logger())
 
     api.onError(handleApiError)
 
@@ -18,5 +18,26 @@ export default function createApi() {
     })
     return api
 }
+
+export async function startApi(api, config = {}) {
+    try {
+        const {serve} = await import("@hono/node-server")
+        const {mongoose} = await import("../db/index.js")
+
+        mongoose.connect(config.URI).then(_ => {
+            serve({
+                fetch: api.fetch,
+                port: config.PORT,
+            }, (addressInfo) => console.log(`server successfully start ${config.HOST} and run on port=${addressInfo.port}`))
+        }).catch(_ => {
+            console.error(`Unable to start the server cause can't connect to db.`)
+            process.exit(1)
+        })
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+
 
 
