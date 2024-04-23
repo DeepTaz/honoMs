@@ -1,9 +1,8 @@
-import {createCookie, deleteServerCookie, setHeaders} from "../../../common/honoUtil.js";
-import {COOKIES, HEADERS, SERVER_STATUS_CODE} from "../../../common/constant.js";
+import {createCookie, deleteServerCookie} from "../../../common/honoUtil.js";
+import {COOKIES, SERVER_STATUS_CODE} from "../../../common/constant.js";
 import {Api_error} from "../../../common/api_error.js";
 import {Users} from "../../../db/schemas/user.js";
 import {sanitizeMongo} from "../../../common/util.js";
-import {getCookie, setCookie} from "hono/cookie";
 
 // creation de compte
 export const signUpController = async function (context) {
