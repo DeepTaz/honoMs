@@ -13,3 +13,12 @@ export const SERVER_STATUS_CODE = {
     INTERNAL_SERVER_ERROR: 500, // A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.
     SERVER_TEMPORLY_UNAVALIBLE: 503, //  server has been comprised by a temporary overload (or sometimes purposeful maintenance). A DDoS attack (short for Distributed Denial of Service) is when a malicious party flood the bandwidth or resources of a specific system.
 }
+
+
+export const COOKIES = {
+    AUTH: "auth-cookie"
+}
+
+export const HEADERS = {
+    AUTH:"auth-authorization"
+}

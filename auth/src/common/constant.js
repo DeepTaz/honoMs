@@ -11,16 +11,12 @@ export const AUTH = {
 }
 
 export const COOKIE_OPTIONS = {
-    path: '/',
-    secure: true,
-    httpOnly: true,
-    maxAge: 1000,
-    expires: new Date(),
-    sameSite: 'Strict',
-}
-
-export const COOKIES_NAMES = {
-    JWT: "auth-cookies"
+    /*path: '/',*/
+    /*secure: true,*/
+    /*httpOnly: true,*/
+    /*maxAge: 1000,*/
+    /*expires: new Date(),
+    /*sameSite: 'Strict',*/
 }
 
 export const PATHS = {
