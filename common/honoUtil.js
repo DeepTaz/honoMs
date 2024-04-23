@@ -18,7 +18,7 @@ export async function createCookie(data, context) {
     //Create token with headers
     setHeaders(context, HEADERS.AUTH, token)
     // Create cookie
-    // There are a problemes with setcookie options
+    // There are a problems with set cookie options
     setCookie(context, COOKIES.AUTH, token)
 }
 
