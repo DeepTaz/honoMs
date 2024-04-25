@@ -1,0 +1,191 @@
+[
+  {
+    "city": "Sokodé",
+    "lat": "8.9833",
+    "lng": "1.1333",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Centrale",
+    "isValid": true
+  },
+  {
+    "city": "Kpalimé",
+    "lat": "6.9000",
+    "lng": "0.6333",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Plateaux",
+    "isValid": true
+  },
+  {
+    "city": "Atakpamé",
+    "lat": "7.5269",
+    "lng": "1.1267",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Plateaux",
+    "isValid": true
+  },
+  {
+    "city": "Dapaong",
+    "lat": "10.8667",
+    "lng": "0.2000",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Savanes",
+    "isValid": true
+  },
+  {
+    "city": "Tsévié",
+    "lat": "6.4333",
+    "lng": "1.2167",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Maritime",
+    "isValid": true
+  },
+  {
+    "city": "Notsé",
+    "lat": "6.9483",
+    "lng": "1.1681",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Plateaux",
+    "isValid": true
+  },
+  {
+    "city": "Tabligbo",
+    "lat": "6.5833",
+    "lng": "1.5000",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Maritime",
+    "isValid": true
+  },
+  {
+    "city": "Mango",
+    "lat": "10.3556",
+    "lng": "0.4756",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Savanes",
+    "isValid": true
+  },
+  {
+    "city": "Lomé",
+    "lat": "6.1319",
+    "lng": "1.2228",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Maritime",
+    "isValid": true
+  },
+  {
+    "city": "Sotouboua",
+    "lat": "8.5667",
+    "lng": "0.9833",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Centrale",
+    "isValid": true
+  },
+  {
+    "city": "Aného",
+    "lat": "6.2333",
+    "lng": "1.6000",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Maritime",
+    "isValid": true
+  },
+  {
+    "city": "Bafilo",
+    "lat": "9.3500",
+    "lng": "1.2667",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Kara",
+    "isValid": true
+  },
+  {
+    "city": "Kara",
+    "lat": "9.5511",
+    "lng": "1.1861",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Kara",
+    "isValid": true
+  },
+  {
+    "city": "Bassar",
+    "country": "Togo",
+    "iso2": "TG",
+    "Region": "Kara",
+    "lat": "9.2620420",
+    "lng": "0.7790270",
+    "isValid": true
+  },
+  {
+    "city": "Aného",
+    "country": "Togo",
+    "Region": "Maritime",
+    "iso2": "TG",
+    "lat": "6.2288772",
+    "lng": "1.5938066",
+    "isValid": true
+  },
+  {
+    "city": "Tchamba",
+    "country": "Togo",
+    "Region": "Centrale",
+    "iso2": "TG",
+    "lat": "9.0266810",
+    "lng": "1.4165160",
+    "isValid": true
+  },
+  {
+    "city": "Niamtougou",
+    "country": "Togo",
+    "Region": "Kara",
+    "iso2": "TG",
+    "lat": "9.7662780",
+    "lng": "1.1084090",
+    "isValid": true
+  },
+  {
+    "city": "Sotouboua",
+    "country": "Togo",
+    "Region": "Centrale",
+    "iso2": "TG",
+    "lat": "8.5619408",
+    "lng": "0.9758609",
+    "isValid": true
+  },
+  {
+    "city": "Vogan",
+    "country": "Togo",
+    "Region": "Maritime",
+    "iso2": "TG",
+    "lat": "6.3349560",
+    "lng": "1.5297070",
+    "isValid": true
+  },
+  {
+    "city": "Badou",
+    "country": "Togo",
+    "Region": "Plateaux",
+    "iso2": "TG",
+    "lat": "7.5832780",
+    "lng": "0.6074240",
+    "isValid": true
+  },
+  {
+    "city": "Amlamé",
+    "country": "Togo",
+    "Region": "Plateaux",
+    "iso2": "TG",
+    "lat": "7.4617780",
+    "lng": "0.9042350",
+    "isValid": true
+  }
+]
