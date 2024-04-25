@@ -37,3 +37,15 @@ export const sanitizeMongo = function (o = {}) {
     }
     return o
 }
+
+export function dynamicImport(path = "") {
+    return new Promise(async function (resolve, reject) {
+        {
+            try {
+                resolve(await import(path))
+            } catch (e) {
+                reject(e)
+            }
+        }
+    })
+}
