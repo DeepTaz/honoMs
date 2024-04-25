@@ -4,7 +4,7 @@ export const locationType = [
     "Maison",
     "Villa",
     "Résidence",
-    "Maisonnette"
+    "Logement"
 ]
 export const TG_REGEX_NUM = /^((\+228)?\s?)?[9|7][0-9]{7}$/
 
