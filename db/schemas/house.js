@@ -1,5 +1,6 @@
-import {mongoose, Schema} from "../index.js"
-import {locationType, TG_REGEX_NUM} from "./consant";
+import {mongoose, Schema, schemaObjectId} from "../index.js"
+import {locationType, TG_REGEX_NUM} from "./consant.js";
+import {City} from "./city.js";
 
 const pointSchema = new Schema({
     type: {
@@ -13,12 +14,53 @@ const pointSchema = new Schema({
     }
 })
 
+
+const houseTypeSchema = new Schema({
+    name: {
+        type: String,
+        required: [true, "Le type de la maison est requis."],
+        enum: locationType
+    },
+    room: {
+        type: Number,
+        default: 1,
+        required: [true, "ce champ est requis "],
+    },
+    kitchen: {
+        type: Number,
+        default: 0
+    },
+    bedroom: {
+        type: Number,
+        default: 0
+    },
+    livingRoom: {
+        type: Number,
+        default: 0
+    }
+})
+
+houseTypeSchema.pre("save", async function (next) {
+
+    if (this.room <= 1) {
+        this.kitchen = 0
+        this.livingRoom = 0
+        this.bedroom = 0
+    }
+    next()
+})
+
 const houseSchema = new Schema({
+    userAdd: {
+        type: schemaObjectId,
+        ref: "Users",
+        required: [true, "who add the image"]
+    },
     ownerPhoneNumber: {
         type: String,
-        unique: true,
         match: [TG_REGEX_NUM, "Numéro de téléphone invalide."],
-        required: [true, "Le numéro de telephone est requis."]
+        required: [true, "Le numéro de telephone est requis."],
+        selected: false,
     },
     title: {
         type: String,
@@ -29,28 +71,26 @@ const houseSchema = new Schema({
     },
     city: {
         type: String,
-        required: [true, "Veuillez spécifiér la ville dans la quelle elle ce trouve."],
+        required: [true, "Veuillez spécifiér la ville dans la quelle elle ce trouve."]
     },
     address: {
         type: String,
         required: [true, "Veuillez specifier l'adresse de la maison."],
     },
     houseImages: {
-        type: [Mongoose.Schema.Types.ObjectId],
+        type: [String],
     },
-    houseType: {
-        type: String,
-        required: [true, "Le type de la maison."],
-        enum: locationType
-    },
+    surface: Number,
+    houseType: houseTypeSchema,
     country: {
+        type: String,
         default: "Togo"
     },
     price: {
         type: Number,
         required: [true, "Le prix de la maison svp!"]
     },
-    availability: {
+    status: {
         type: Boolean,
         default: true,
         required: [true, "Veuillez spécifier la disponibilités de la maison."],
@@ -64,5 +104,16 @@ const houseSchema = new Schema({
         default: 0
     }
 }, {versionKey: false, timestamps: true})
+
+
+houseSchema.pre("save", async function (next) {
+    if (!this.isModified("city")) return next()
+    let city = await City.findOne({name: this.city})
+    if (!city) {
+        city = await new City({name: this.city}).save();
+    }
+    this.city = city.name;
+    next()
+})
 
 export const Houses = mongoose.model('Houses', houseSchema)
