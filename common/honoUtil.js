@@ -16,9 +16,10 @@ export async function createCookie(data, context) {
     }
     const token = await sign(cookieData, AUTH.JWT_SECRET)
     //Create token with headers
+    //const headersToken = "Bear  "+token
     setHeaders(context, HEADERS.AUTH, token)
     // Create cookie
-    // There are a problemes with setcookie options
+    // There are a problems with set cookie options
     setCookie(context, COOKIES.AUTH, token)
 }
 

@@ -10,6 +10,7 @@ const userSchema = new Schema({
         trim: true,
         maxLength: [14, "au plus 10"],
         minLength: [4, "au moin 4 caractères"],
+        lowercase:true,
         validate: {
             validator: function (val) {
                 return val.search(/[^\w-_éàè]/gi) === -1
