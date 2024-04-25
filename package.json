@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "main": "set AUTH_ENV=dev&&nodemon main.js",
     "dev:auth": "set AUTH_ENV=dev&&nodemon auth/index.js"
   },
   "dependencies": {
