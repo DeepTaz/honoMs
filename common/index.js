@@ -4,11 +4,12 @@ import {cors} from "hono/cors"
 import {compress} from 'hono/compress';
 import {handleApiError} from "./errors.js";
 import {SERVER_STATUS_CODE} from "./constant.js";
+import {dynamicImport} from "./util.js";
 
 
 export default function createApi() {
     const api = new Hono()
-    // les middlewares que j'utilise souvent.
+
     api.use(compress(), cors(), logger())
 
     api.onError(handleApiError)
@@ -21,8 +22,8 @@ export default function createApi() {
 
 export async function startApi(api, config = {}) {
     try {
-        const {serve} = await import("@hono/node-server")
-        const {mongoose} = await import("../db/index.js")
+        const {serve} = await dynamicImport("@hono/node-server")
+        const {mongoose} = await dynamicImport("../db/index.js")
 
         mongoose.connect(config.URI).then(_ => {
             serve({
