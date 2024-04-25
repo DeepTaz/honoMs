@@ -6,7 +6,7 @@ export const AUTH = {
     PORT,
     URI,
     HOST: process.env.host || `http://localhost:${PORT}`,
-    EXPIRES: "5m",
+    EXPIRES: "10m",
     JWT_SECRET: process.env.jwt_scret || "ppp"
 }
 
