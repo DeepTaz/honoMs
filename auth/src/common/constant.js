@@ -1,6 +1,6 @@
 const PORT = process.env.PORT || 3000
 
-const URI = process.env.AUTH_ENV === "dev" ? process.env.dev_uri || "mongodb://localhost:27017/house" : process.env.uri
+const URI = process.env.Node_env === "dev" ? process.env.dev_uri || "mongodb://localhost:27017/house" : process.env.uri
 
 export const AUTH = {
     PORT,
@@ -11,12 +11,12 @@ export const AUTH = {
 }
 
 export const COOKIE_OPTIONS = {
-    /*path: '/',*/
-    /*secure: true,*/
-    /*httpOnly: true,*/
-    /*maxAge: 1000,*/
-    /*expires: new Date(),
-    /*sameSite: 'Strict',*/
+    path: '/',
+    secure: process.env.Node_env === true,
+    httpOnly: true,
+    maxAge: 1000,
+    /*expires: new Date(),*/
+    sameSite: 'Strict'
 }
 
 export const PATHS = {
