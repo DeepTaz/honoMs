@@ -7,7 +7,7 @@ import {
 } from "../controllers/sign.js";
 import {PATHS} from "../common/constant.js";
 import {getUserController, profileController} from "../controllers/user.js";
-import {SERVER_STATUS_CODE} from "../../../common/constant.js";
+import {STATUS_CODE} from "../../../common/constant.js";
 import {zodErrorHandle} from "../../../common/errors.js";
 import {userSchema} from "../../../common/validator.js";
 import {authMiddleware} from "../../../common/honoUtil.js";
@@ -18,7 +18,7 @@ const {SIGN_UP, SIGN_IN, LOGOUT, USER, PROFILE} = PATHS
 
 authRoute.post(SIGN_UP, zValidator("json", userSchema, (result, context) => {
     if (!result.success) {
-        return context.json(zodErrorHandle(result), SERVER_STATUS_CODE.BAD_REQUEST)
+        return context.json(zodErrorHandle(result), STATUS_CODE.BAD_REQUEST)
     }
 }), signUpController)
 
