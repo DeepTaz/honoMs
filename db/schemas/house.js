@@ -6,14 +6,15 @@ const pointSchema = new Schema({
     type: {
         type: String,
         enum: ["Point"],
-        required: true
+        required: true,
+        select: false,
     },
-    coordinate: {
+    coordinates: {
         type: [Number],
-        required: true
+        required: true,
+        select: false
     }
 })
-
 
 const houseTypeSchema = new Schema({
     name: {
@@ -23,8 +24,8 @@ const houseTypeSchema = new Schema({
     },
     room: {
         type: Number,
-        default: 1,
         required: [true, "ce champ est requis "],
+        default: 1,
     },
     kitchen: {
         type: Number,
@@ -54,7 +55,7 @@ const houseSchema = new Schema({
     userAdd: {
         type: schemaObjectId,
         ref: "Users",
-        required: [true, "who add the image"]
+        required: [true, "who add the house"]
     },
     ownerPhoneNumber: {
         type: String,
@@ -95,10 +96,7 @@ const houseSchema = new Schema({
         default: true,
         required: [true, "Veuillez spécifier la disponibilités de la maison."],
     },
-    location: {
-        type: pointSchema,
-        required: [true, "La localisation est requise."]
-    },
+    location: pointSchema,
     like: {
         type: Number,
         default: 0
