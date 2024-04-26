@@ -3,7 +3,7 @@ import {logger} from "hono/logger"
 import {cors} from "hono/cors"
 import {compress} from 'hono/compress';
 import {handleApiError} from "./errors.js";
-import {SERVER_STATUS_CODE} from "./constant.js";
+import {STATUS_CODE} from "./constant.js";
 import {dynamicImport} from "./util.js";
 
 
@@ -15,7 +15,7 @@ export default function createApi() {
     api.onError(handleApiError)
 
     api.notFound((c) => {
-        return c.json({message: "The ressources you search do not exists."}, SERVER_STATUS_CODE.NOT_FOUND)
+        return c.json({message: "The ressources you search do not exists."}, STATUS_CODE.NOT_FOUND)
     })
     return api
 }
