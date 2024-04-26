@@ -1,4 +1,4 @@
-export const SERVER_STATUS_CODE = {
+export const STATUS_CODE = {
     OK: 200, // Standard response for successful HTTP requests.
     CREATED: 201, // The request has been fulfilled, resulting in the creation of a new resource.
     ACCEPTED: 202, // The request has been accepted for processing, but the processing has not been completed.
