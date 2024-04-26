@@ -1,4 +1,4 @@
-import {SERVER_STATUS_CODE} from "./constant.js";
+import {STATUS_CODE} from "./constant.js";
 import {createServerObjectError} from "./util.js";
 
 //import {deleteServerCookie} from "../controllers/honoUtil.js";
@@ -33,7 +33,7 @@ export function firebaseErrorHandle(fireError) {
 export function errorHandle(error, context) {
     const errorFuncObj = {
         11000: function () {
-            return createServerObjectError("duplicate", Object.keys(error.keyValue)[0], "duplicate value", SERVER_STATUS_CODE.CONFLICT)
+            return createServerObjectError("duplicate", Object.keys(error.keyValue)[0], "duplicate value", STATUS_CODE.CONFLICT)
         },
         "ValidationError": function () {
             let e = {};
@@ -42,17 +42,17 @@ export function errorHandle(error, context) {
                 e.message = error.errors[key].message
             });
 
-            return createServerObjectError("validation fail", e.path, e.message, SERVER_STATUS_CODE.BAD_REQUEST)
+            return createServerObjectError("validation fail", e.path, e.message, STATUS_CODE.BAD_REQUEST)
         },
         "Api_Error": function () {
             return createServerObjectError(error.codeName, "", error.message, error.statusCode)
         },
         "JwtTokenInvalid": function (context) {
             //deleteServerCookie(context, COOKIES_NAMES.JWT)
-            return createServerObjectError("jwtError", "jwt", error.message, SERVER_STATUS_CODE.INTERNAL_SERVER_ERROR)
+            return createServerObjectError("jwtError", "jwt", error.message, STATUS_CODE.INTERNAL_SERVER_ERROR)
         },
         "SyntaxError": function () {
-            return createServerObjectError("JSON error", "JSON", error.message, SERVER_STATUS_CODE.BAD_REQUEST)
+            return createServerObjectError("JSON error", "JSON", error.message, STATUS_CODE.BAD_REQUEST)
         }
     }[error.code || error.name]
     return errorFuncObj ? errorFuncObj(context) : createServerObjectError();
